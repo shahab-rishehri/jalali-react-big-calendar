@@ -12,7 +12,7 @@ class Cultures extends React.Component {
 
   render() {
     const { localizer } = this.props
-    let cultures = ['en', 'en-GB', 'es', 'fr', 'ar-AE']
+    let cultures = ['en', 'en-GB', 'es', 'fr', 'ar-AE', 'fa']
     let rtl = this.state.culture === 'ar-AE'
 
     return (
@@ -36,7 +36,7 @@ class Cultures extends React.Component {
           rtl={rtl}
           events={events}
           culture={this.state.culture}
-          defaultDate={new Date(2015, 3, 1)}
+          defaultDate={new Date()}
           localizer={localizer}
         />
       </React.Fragment>

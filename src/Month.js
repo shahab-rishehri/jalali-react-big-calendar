@@ -223,7 +223,7 @@ class MonthView extends React.Component {
         <HeaderComponent
           date={day}
           localizer={localizer}
-          label={localizer.format(day, 'weekdayFormat')}
+          label={localizer.format(day, 'ddd')}
         />
       </div>
     ))

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import cn from 'classnames'
 import { navigate } from './utils/constants'
+// import { ReactComponent as ArrowRight } from './assets/images/svg/arrowRight.svg'
+import MyImageSvg from './assets/images/svg/arrowRight.svg'
 
 class Toolbar extends React.Component {
   static propTypes = {
@@ -18,30 +20,31 @@ class Toolbar extends React.Component {
 
     return (
       <div className="rbc-toolbar">
-        <span className="rbc-btn-group">
-          <button
+        <button
+          type="button"
+          onClick={this.navigate.bind(null, navigate.PREVIOUS)}
+        >
+          <img src={MyImageSvg} className="left" />
+          {/* {messages.previous} */}
+        </button>
+        {/* <div className="rbc-btn-group"> */}
+        {/* <button
             type="button"
             onClick={this.navigate.bind(null, navigate.TODAY)}
           >
             {messages.today}
-          </button>
-          <button
-            type="button"
-            onClick={this.navigate.bind(null, navigate.PREVIOUS)}
-          >
-            {messages.previous}
-          </button>
-          <button
-            type="button"
-            onClick={this.navigate.bind(null, navigate.NEXT)}
-          >
-            {messages.next}
-          </button>
-        </span>
+          </button> */}
+
+        {/* </div> */}
 
         <span className="rbc-toolbar-label">{label}</span>
 
-        <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span>
+        {/* <span className="rbc-btn-group">{this.viewNamesGroup(messages)}</span> */}
+        <button type="button" onClick={this.navigate.bind(null, navigate.NEXT)}>
+          <img src={MyImageSvg} />
+
+          {/* {messages.next} */}
+        </button>
       </div>
     )
   }
